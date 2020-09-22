@@ -7,10 +7,10 @@ import { handleInitialData } from '../redux/shared'
 import DeckItem from "../components/DeckItem";
 
 
-const Home = ({ navigation, decks, handleInitialData }) => {
+const Home = ({ navigation, decks, fetchInitialData }) => {
 
   useEffect(() => {
-    handleInitialData()
+    fetchInitialData()
   }, [])
 
 
@@ -24,6 +24,7 @@ const Home = ({ navigation, decks, handleInitialData }) => {
     <View style={globalStyle.main}>
       <Text style={globalStyle.title}> My Decks </Text>
       {Object.keys(decks).map((id) => {
+        console.log('here', id, decks)
         return (
           <TouchableOpacity
             key={id}
@@ -44,11 +45,13 @@ const mapStateToProps = ({ decks }) => {
   }
 }
 
-const actionCreators = {
-  handleInitialData,
+const mapDispatchToProps = dispatch =>  {
+  return {
+    fetchInitialData: () => dispatch(handleInitialData())
+  }
 }
 
 
 
 
-export default connect(mapStateToProps, { handleInitialData })(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
