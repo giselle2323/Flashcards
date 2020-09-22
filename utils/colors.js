@@ -1,0 +1,12 @@
+export const background = "#384261";
+export const white = "#e4ebff";
+export const primaryText = "#e4ebff";
+export const primary = "#FAAE2B";
+export const secondary = "#FFA8BA";
+export const teritary = "#FA5246";
+export const textPrimary = "#00473E";
+export const textSecondary = "#475D5B";
+export const textDisabled = "#C4C4C4";
+export const disabledwhite = "#E5E5E5";
+export const mildPrimary = "#c9d6ff";
+export const lightPrimary = "#50518b";
