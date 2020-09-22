@@ -1,19 +1,19 @@
 export const decks = {
-  "Silicon Valley": {
-    title: "Silicon Valley",
+  "Farming": {
+    title: "Farming",
     questions: [
       {
-        question: "What is the name of the startup company?",
-        answer: "Pied Piper",
+        question: "Who is a farmer ?",
+        answer: "Someone who plants",
       },
       {
-        question: "Who is the owner?",
-        answer: "Richard Hendricks",
+        question: "Is farming profitable?",
+        answer: "Not always",
       },
     ],
   },
-  "Game of Thrones": {
-    title: "Game of Thrones",
+  "Game of Avengers": {
+    title: "Game of Avengers",
     questions: [
       {
         question: "How many kingdoms are there in total?",
@@ -22,6 +22,19 @@ export const decks = {
       {
         question: "Who is the Jon Snow?",
         answer: "The true hier to the iron throne",
+      },
+    ],
+  },
+  "Game of Skrrr": {
+    title: "Game of Skrrr",
+    questions: [
+      {
+        question: "How many toys are there in total?",
+        answer: "There are eight toys",
+      },
+      {
+        question: "Who is the Jon Pop?",
+        answer: "The fake hier to the iron throne",
       },
     ],
   },

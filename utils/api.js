@@ -1,7 +1,7 @@
 import { decks } from "./data";
 import { AsyncStorage } from "react-native";
 
-const LOCAL_STORAGE_KEY = "DECK_LIST";
+const LOCAL_STORAGE_KEY = "FLASH_CARDS";
 
 export const getInitialData = async () => {
   try {
