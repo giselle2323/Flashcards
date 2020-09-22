@@ -1,21 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import * as Font from "expo-font";
+import AppNavigation from "./navigation/Navigation";
+import { AppLoading } from "expo";
+import { View, Dimensions } from "react-native";
+import AppStatusBar from "./navigation/StatusBar";
+import { mildPrimary } from "./utils/colors";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { createLocalNotification } from "./utils/notifications";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const customFonts = {
+  Montserrat: require("./assets/fonts/Montserrat.ttf"),
+};
+
+export default class App extends Component {
+
+  state = {
+    fontsLoaded: false,
+  };
+
+  componentDidMount() {
+    this._loadFontsAsync();
+    createLocalNotification();
+  }
+
+  async _loadFontsAsync() {
+    await Font.loadAsync(customFonts);
+    this.setState({ fontsLoaded: true });
+  }
+
+  render() {
+    if (!this.state.fontsLoaded) {
+      return <AppLoading />;
+    }
+    return (
+      <Provider store={store}>
+        <View
+          style={{
+            width: Dimensions.get("window").width,
+            height: Dimensions.get("window").height,
+          }}
+        >
+          <AppStatusBar backgroundColor={mildPrimary} barStyle="dark-content" />
+          <AppNavigation />
+        </View>
+      </Provider>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
