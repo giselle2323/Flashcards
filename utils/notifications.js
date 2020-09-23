@@ -60,7 +60,7 @@ export function createLocalNotification() {
                 Notifications.scheduleLocalNotificationAsync(
                   sendNotification(),
                   {
-                    time: tomorrow.getTime(),
+                    time: tomorrow,
                     repeat: "day",
                   }
                 );
