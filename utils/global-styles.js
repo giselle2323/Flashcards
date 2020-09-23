@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import {
-  white,
+  lightWhite,
   secondary,
   textSecondary,
   background,
@@ -17,6 +17,7 @@ export const globalStyle = StyleSheet.create({
     padding: 20,
   },
   title: {
+    textAlign: 'center',
     fontFamily: globalFont,
     fontSize: 24,
     lineHeight: 36,
@@ -31,7 +32,7 @@ export const globalStyle = StyleSheet.create({
     marginTop: 20,
   },
   deckItem: {
-    backgroundColor: white,
+    backgroundColor: lightWhite,
     padding: 15,
     marginBottom: 10,
     marginTop: 10,
@@ -59,7 +60,7 @@ export const globalStyle = StyleSheet.create({
     color: background,
   },
   inputField: {
-    backgroundColor: white,
+    backgroundColor: lightWhite,
     padding: 15,
     fontFamily: globalFont,
     color: textSecondary,
