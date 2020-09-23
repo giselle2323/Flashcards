@@ -24,7 +24,6 @@ const Home = ({ navigation, decks, fetchInitialData }) => {
     <View style={globalStyle.main}>
       <Text style={globalStyle.title}> My Decks </Text>
       {Object.keys(decks).map((id) => {
-        console.log('here', id, decks)
         return (
           <TouchableOpacity
             key={id}
