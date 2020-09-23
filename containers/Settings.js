@@ -1,44 +1,38 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Text, View, StyleSheet } from 'react-native'
 import { resetDecks } from '../utils/api.js'
 import { connect } from 'react-redux'
 import { resetStore } from '../redux/actions'
 import Button from '../components/Button'
-import { background, white, lightBackground } from '../utils/colors'
+import { background, white } from '../utils/colors'
 
-class Settings extends Component {
-  static propTypes = {
-    navigation: PropTypes.object.isRequired,
-    resetStore: PropTypes.func.isRequired
-  };
-  handleResetDecks = () => {
-    const { resetStore, navigation } = this.props;
+const Settings = () =>  {
+  
+  const handleResetDecks = ({ resetStore, navigation }) => {
 
     resetStore();
     resetDecks();
     navigation.goBack();
   };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}> Settings </Text>
-        <View style={styles.blockContainer}>
-          <View style={styles.block} >
-            <Text style={styles.blockText}>
-              This will reset the data back to the original data set.
-            </Text>
-            <View />
-            <Button
-              type='Secondary'
-              title="Reset Data"
-              onPress={this.handleResetDecks}
-            />
-          </View>
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}> Settings </Text>
+      <View style={styles.blockContainer}>
+        <View style={styles.block} >
+          <Text style={styles.blockText}>
+            This will reset the data back to the original data set.
+          </Text>
+          <View />
+          <Button
+            type='Secondary'
+            title="Reset Data"
+            onPress={handleResetDecks}
+          />
         </View>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -75,6 +69,10 @@ const styles = StyleSheet.create({
   }
 });
 
+Settings.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  resetStore: PropTypes.func.isRequired
+};
 export default connect(
   null,
   { resetStore }
