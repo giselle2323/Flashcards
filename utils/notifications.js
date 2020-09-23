@@ -2,10 +2,10 @@ import { AsyncStorage } from "react-native";
 import { Notifications } from "expo";
 
 import * as Permissions from "expo-permissions";
-import { primary } from "./colors";
+import { background, primary } from "./colors";
 
 const STORAGE_KEY = "NOTIFICATION";
-const NOTIFICATION_CHANNEL_ID = "QUICK_REMAINDERS";
+const NOTIFICATION_CHANNEL_ID = "QUICK_REMINDERS";
 
 export function removeNotifications() {
   return AsyncStorage.removeItem(STORAGE_KEY).then(
@@ -16,14 +16,14 @@ export function removeNotifications() {
 function sendNotification() {
   return {
     title: "Flashcards",
-    body: "👋 Forgot to study? here's a quick remainder",
+    body: "👋 Forgot to study? here's a quick reminder",
     ios: {
       sound: true,
     },
     android: {
       channelId: NOTIFICATION_CHANNEL_ID,
       sticky: false,
-      color: primary,
+      color: background,
     },
   };
 }
@@ -51,17 +51,17 @@ export function createLocalNotification() {
               .then(() => {
                 Notifications.cancelAllScheduledNotificationsAsync();
 
-                const nextDay = new Date();
+                const tomorrow = new Date();
 
-                nextDay.setDate(nextDay.getDate() + 1);
-                nextDay.setHours(20);
-                nextDay.setMinutes(0);
+                // tomorrow.setDate(tomorrow.getDate() + 1);
+                // tomorrow.setHours(20);
+                // tomorrow.setMinutes(0);
 
                 Notifications.scheduleLocalNotificationAsync(
                   sendNotification(),
                   {
-                    time: nextDay,
-                    repeat: "day",
+                    time: tomorrow.getTime() + 6000,
+                    repeat: "minute",
                   }
                 );
 

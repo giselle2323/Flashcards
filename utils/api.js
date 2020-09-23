@@ -63,3 +63,17 @@ export const createDeck = async (title) => {
     console.log(err);
   }
 };
+
+
+export async function removeDeckAsync(key) {
+  try {
+    const decks = await AsyncStorage.getItem(LOCAL_STORAGE_KEY);
+    const data = JSON.parse(decks);
+    data[key] = undefined;
+    delete data[key];
+    console.log(data);
+    AsyncStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+  } catch (err) {
+    console.log(err);
+  }
+}
