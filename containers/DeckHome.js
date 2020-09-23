@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
+import React from "react";
+import { View, Text, Alert } from "react-native";
 import { connect } from "react-redux";
 
 import { removeDeck } from '../redux/actions';
 import { removeDeckAsync } from '../utils/api';
-import { textPrimary, secondary, purple } from "../utils/colors";
+import { purple } from "../utils/colors";
 import { globalStyle as styles } from "../utils/global-styles";
 import Appbar from "../components/Appbar";
 import QuickAction from "../components/QuickAction";
 
 
 
-const DeckHome = ({ navigation, id, deck, cardsLength }) => {
+const DeckHome = ({ navigation, id, deck, cardsLength, removeDeck }) => {
 
   const goBack = () => {
     navigation.navigate("home");
@@ -30,17 +30,32 @@ const DeckHome = ({ navigation, id, deck, cardsLength }) => {
     });
   };
 
-  const deleteDeck = (id) => {
-    removeDeck(id)
-    removeDeckAsync(id)
-    console.log('done')
-    navigation.navigate("home");
-  }
+  const handleDeleteDeck = () => {
+
+    Alert.alert(
+      "Delete Deck",
+      `Are you sure you want to delete the deck ${id}?`,
+      [
+        { text: "Cancel" },
+        {
+          text: "OK",
+          onPress: async () => {
+            removeDeck(id);
+            await removeDeckAsync(id);
+            navigation.navigate("home", {
+              id: id
+            });
+          }
+        }
+      ],
+      { cancelable: true }
+    );
+  };
 
   return (
     <View style={styles.main}>
       <Appbar
-        title={deck.title ?? "Deck Title"}
+        title={deck ? deck.title : "Deck Title"}
         subtitle={`${cardsLength} ${cardsLength > 1 ? "cards" : "card"}`}
         onBackPressed={goBack}
       />
@@ -61,7 +76,7 @@ const DeckHome = ({ navigation, id, deck, cardsLength }) => {
         title="Delete Deck"
         iconName="delete"
         color={purple}
-        onPressed={deleteDeck}
+        onPressed={handleDeleteDeck}
       />
     </View>
   );
@@ -75,8 +90,8 @@ const mapStateToProps = ({ decks }, { route }) => {
   return {
     id: id,
     deck,
-    cardsLength: deck.questions.length,
+    cardsLength: deck ? deck.questions.length : 0,
   };
 };
 
-export default connect(mapStateToProps)(DeckHome);
+export default connect(mapStateToProps, { removeDeck })(DeckHome);

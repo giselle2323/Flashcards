@@ -5,6 +5,7 @@ import { Feather } from "@expo/vector-icons";
 
 import Home from "../containers/Home";
 import AddDeck from "../containers/AddDeck";
+import Settings from '../containers/Settings';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -35,6 +36,17 @@ export default function Navigation() {
         name="adddeck"
         component={AddDeck}
       />
+      <Tab.Screen
+        options={{
+          tabBarLabel: "Settings",
+          tabBarIcon: ({ color }) => (
+            <Feather name="settings" color={color} size={24} />
+          ),
+        }}
+        name="settings"
+        component={Settings}
+      />
+      
     </Tab.Navigator>
   );
 }

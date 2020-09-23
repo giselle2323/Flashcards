@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { purple, lightWhite, primary, primaryText } from "../utils/colors";
+import { purple, lightWhite, primary, primaryText, white } from "../utils/colors";
 
 const QuizContainer = ({ question, answer, index, total }) => {
 
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   counter: {
     fontFamily: "Montserrat",
-    color: primary,
+    color: white,
     fontSize: 18,
     lineHeight: 22,
     marginTop: 10
