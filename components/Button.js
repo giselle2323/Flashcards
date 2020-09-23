@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderStyle: "solid",
     borderWidth: 3,
-    borderColor: secondary,
+    borderColor: lightBackground,
   },
   secondaryBtnText: {
     fontFamily: globalFont,
-    color: secondary,
+    color: lightBackground,
     textAlign: "center",
   },
 });
