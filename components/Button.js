@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import {
   textPrimary,
-  mildPrimary,
+  lightBackground,
   disabledwhite,
   textDisabled,
   secondary,
@@ -38,7 +38,7 @@ const globalFont = "Montserrat";
 const styles = StyleSheet.create({
   primaryBtn: {
     padding: 10,
-    backgroundColor: mildPrimary,
+    backgroundColor: lightBackground,
     width: 100,
     marginTop: 20,
     marginBottom: 10,
