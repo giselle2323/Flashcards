@@ -2,6 +2,7 @@ export const GET_DECKS = "GET_DECKS";
 export const CREATE_CARD = "CREATE_CARD";
 export const CREATE_DECK = "CREATE_DECK";
 export const REMOVE_DECK = 'REMOVE_DECK';
+export const RESET_STORE = 'RESET_STORE';
 
 import { addCardToDeck, createDeck } from "../../utils/api";
 
@@ -21,7 +22,6 @@ const createCard = ({ id, question, answer }) => {
   };
 };
 
-// Pass id, question and answer as arguements
 export const handleCreateCard = (info) => {
   return (dispatch) => {
     addCardToDeck(info).then(() => {
@@ -49,5 +49,11 @@ export function removeDeck(id) {
   return {
     type: REMOVE_DECK,
     id
+  };
+}
+
+export function resetStore() {
+  return {
+    type: RESET_STORE
   };
 }

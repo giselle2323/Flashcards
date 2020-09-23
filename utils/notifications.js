@@ -53,15 +53,15 @@ export function createLocalNotification() {
 
                 const tomorrow = new Date();
 
-                // tomorrow.setDate(tomorrow.getDate() + 1);
-                // tomorrow.setHours(20);
-                // tomorrow.setMinutes(0);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(20);
+                tomorrow.setMinutes(0);
 
                 Notifications.scheduleLocalNotificationAsync(
                   sendNotification(),
                   {
-                    time: tomorrow.getTime() + 6000,
-                    repeat: "minute",
+                    time: tomorrow.getTime(),
+                    repeat: "day",
                   }
                 );
 

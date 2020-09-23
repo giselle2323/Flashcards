@@ -3,38 +3,38 @@ export const decks = {
     title: "Farming",
     questions: [
       {
-        question: "Who is a farmer ?",
+        question: "Who is a farmer 🤣 ?",
         answer: "Someone who plants",
       },
       {
-        question: "Is farming profitable?",
+        question: "Is farming profitable ?",
         answer: "Not always",
       },
     ],
   },
-  "Game of Avengers": {
-    title: "Game of Avengers",
+  "General Knowledge": {
+    title: "General Knowledge",
     questions: [
       {
-        question: "How many kingdoms are there in total?",
-        answer: "There are seven kingdoms",
+        question: "Are dogs cute??",
+        answer: "Yes 😊",
       },
       {
-        question: "Who is the Jon Snow?",
-        answer: "The true hier to the iron throne",
+        question: "Are cats cute ?",
+        answer: "Always cute 👌",
       },
     ],
   },
-  "Game of Skrrr": {
-    title: "Game of Skrrr",
+  "Cartoon": {
+    title: "Cartoon",
     questions: [
       {
-        question: "How many toys are there in total?",
-        answer: "There are eight toys",
+        question: "Did Tom really hate Jerry?",
+        answer: "Tom did love Jerry",
       },
       {
-        question: "Who is the Jon Pop?",
-        answer: "The fake hier to the iron throne",
+        question: "Was Naruto an interesting cartoon",
+        answer: "Yes it was a nice cartoon.",
       },
     ],
   },
