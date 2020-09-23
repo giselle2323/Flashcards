@@ -4,7 +4,7 @@ import AppNavigation from "./navigation/Navigation";
 import { AppLoading } from "expo";
 import { View, Dimensions } from "react-native";
 import AppStatusBar from "./navigation/StatusBar";
-import { mildPrimary } from "./utils/colors";
+import { lightBackground } from "./utils/colors";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { createLocalNotification } from "./utils/notifications";
@@ -41,7 +41,7 @@ export default class App extends Component {
             height: Dimensions.get("window").height,
           }}
         >
-          <AppStatusBar backgroundColor={mildPrimary} barStyle="dark-content" />
+          <AppStatusBar backgroundColor={lightBackground} barStyle="dark-content" />
           <AppNavigation />
         </View>
       </Provider>

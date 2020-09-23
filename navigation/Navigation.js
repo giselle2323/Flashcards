@@ -6,6 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import DeckHome from "../containers/DeckHome";
 import Quiz from "../containers/Quiz";
 import AddQuestion from "../containers/AddQuestion";
+import NoQuestion from  "../components/NoQuestion";
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,14 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="noquestion"
+          component={NoQuestion}
+          options={{
+            animationEnabled: true,
+            headerShown: false,
+          }}
+        /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

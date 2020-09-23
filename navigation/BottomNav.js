@@ -1,6 +1,6 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { white, primaryText, mildPrimary } from "../utils/colors";
+import { background, white, lightBackground } from "../utils/colors";
 import { Feather } from "@expo/vector-icons";
 
 import Home from "../containers/Home";
@@ -11,9 +11,9 @@ const Tab = createMaterialBottomTabNavigator();
 export default function Navigation() {
   return (
     <Tab.Navigator
-      activeColor={primaryText}
-      inactiveColor={mildPrimary}
-      barStyle={{ backgroundColor: "#c9d6ff" }}
+      activeColor={background}
+      inactiveColor={white}
+      barStyle={{ backgroundColor: lightBackground }}
     >
       <Tab.Screen
         options={{
