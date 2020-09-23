@@ -85,6 +85,6 @@ PrimaryButton.propTypes = {
   disabled: PropTypes.bool,
   onPress: PropTypes.func,
   type: PropTypes.string,
-  title: PropTypes.str,ing
+  title: PropTypes.string
 }
 export default PrimaryButton;
