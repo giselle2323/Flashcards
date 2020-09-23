@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Alert } from "react-native";
+import PropTypes from 'prop-types'
+
 import Button from "../components/Button";
 import { globalStyle as styles } from "../utils/global-styles";
 import { connect } from "react-redux";
@@ -47,4 +49,8 @@ const actionCreators = {
   handleCreateDeck,
 }
 
+AddDeck.propTypes = {
+  navigation: PropTypes.object,
+  handleCreateDeck: PropTypes.func,
+}
 export default connect(null, { handleCreateDeck })(AddDeck);

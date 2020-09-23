@@ -1,5 +1,6 @@
 import React from 'react'
-import { Text, View, TouchableOPacity  } from 'react-native'
+import { Text, View } from 'react-native'
+import PropTypes from 'prop-types'
 import { globalStyle } from '../utils/global-styles'
 import { connect } from 'react-redux'
 import { background } from '../utils/colors'
@@ -28,4 +29,8 @@ const mapStateToProps = ({ decks }, { id } ) => {
 
 }
 
+DeckItem.propTypes = {
+  cardsLength: PropTypes.number,
+  deck: PropTypes.object,
+}
 export default connect(mapStateToProps)(DeckItem)

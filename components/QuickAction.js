@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import PropTypes from 'prop-types';
 import { AntDesign } from "@expo/vector-icons";
 import { lightWhite } from "../utils/colors";
 
@@ -30,4 +31,10 @@ const styles = (color) =>
     },
   });
 
+QuickAction.propTypes = {
+  onPressed: PropTypes.func,
+  color: PropTypes.string,
+  title: PropTypes.string,
+  iconName: PropTypes.string,
+}
 export default QuickAction

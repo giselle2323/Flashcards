@@ -71,7 +71,6 @@ export async function removeDeckAsync(key) {
     const data = JSON.parse(decks);
     data[key] = undefined;
     delete data[key];
-    console.log(data);
     AsyncStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
   } catch (err) {
     console.log(err);

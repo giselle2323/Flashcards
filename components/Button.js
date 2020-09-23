@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import PropTypes from 'prop-types'
 import {
   textPrimary,
   lightBackground,
@@ -80,4 +81,10 @@ const styles = StyleSheet.create({
   },
 });
 
+PrimaryButton.propTypes = {
+  disabled: PropTypes.bool,
+  onPress: PropTypes.func,
+  type: PropTypes.string,
+  title: PropTypes.str,ing
+}
 export default PrimaryButton;

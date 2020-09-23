@@ -1,4 +1,5 @@
-import { GET_DECKS, CREATE_DECK, CREATE_CARD, REMOVE_DECK , RESET_STORE} from "./actions";
+import { GET_DECKS, CREATE_DECK, CREATE_CARD, REMOVE_DECK, RESET_STORE } from "./actions";
+import { decks as overAllState } from '../utils/data'
 import { loadingBarReducer } from "react-redux-loading-bar";
 import { combineReducers } from "redux";
 
@@ -39,7 +40,7 @@ const decksReducer = (initialState = {}, action) => {
         return decks;
       }, {});
     case RESET_STORE:
-      return initialState;
+      return overAllState;
     default:
       return initialState;
   }

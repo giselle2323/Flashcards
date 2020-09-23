@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import PropTypes from 'prop-types'
 
 import { globalStyle } from "../utils/global-styles";
 import Appbar from "../components/Appbar";
@@ -9,6 +10,11 @@ import NoQuestion from "../components/NoQuestion";
 
 
 export default class QuizWrapper extends React.Component {
+
+  static propTypes = {
+    deck: PropTypes.object,
+    onBack: PropTypes.func
+  }
   state = {
     score: 0,
     showScore: false,

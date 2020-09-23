@@ -54,6 +54,6 @@ export function removeDeck(id) {
 
 export function resetStore() {
   return {
-    type: RESET_STORE
+    type: RESET_STORE,
   };
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Alert } from "react-native";
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 
 import { removeDeck } from '../redux/actions';
@@ -94,4 +95,11 @@ const mapStateToProps = ({ decks }, { route }) => {
   };
 };
 
+DeckHome.propTypes = {
+  navigation: PropTypes.object,
+  id: PropTypes.string,
+  removeDeck: PropTypes.func,
+  deck: PropTypes.object,
+  cardsLength: PropTypes.number
+}
 export default connect(mapStateToProps, { removeDeck })(DeckHome);

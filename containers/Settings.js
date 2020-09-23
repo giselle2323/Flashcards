@@ -1,15 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Text, View, StyleSheet } from 'react-native'
 import { resetDecks } from '../utils/api.js'
-import { connect } from 'react-redux'
 import { resetStore } from '../redux/actions'
 import Button from '../components/Button'
 import { background, white } from '../utils/colors'
 
 const Settings = () =>  {
   
-  const handleResetDecks = ({ resetStore, navigation }) => {
+  const handleResetDecks = ({ navigation, resetStore}) => {
 
     resetStore();
     resetDecks();
@@ -69,11 +69,15 @@ const styles = StyleSheet.create({
   }
 });
 
+
+
+const actionCreators = {
+  resetStore,
+}
+
+
 Settings.propTypes = {
   navigation: PropTypes.object.isRequired,
-  resetStore: PropTypes.func.isRequired
+  resetDeckStore: PropTypes.func,
 };
-export default connect(
-  null,
-  { resetStore }
-)(Settings);
+export default connect(null, actionCreators)(Settings);

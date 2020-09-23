@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import PropTypes from 'prop-types'
 import { purple, lightWhite, primary, primaryText, white } from "../utils/colors";
 
 const QuizContainer = ({ question, answer, index, total }) => {
@@ -57,4 +58,10 @@ const styles = StyleSheet.create({
   }
 });
 
+QuizContainer.propTypes = {
+  question: PropTypes.string,
+  answer: PropTypes.string,
+  index: PropTypes.number,
+  total: PropTypes.number
+}
 export default QuizContainer;

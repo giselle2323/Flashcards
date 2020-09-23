@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { View, TextInput, Alert } from "react-native";
+import PropTypes from 'prop-types';
+
 import { globalStyle as styles } from "../utils/global-styles";
 import Appbar from "../components/Appbar";
 import Button from "../components/Button";
@@ -74,4 +76,9 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+AddQuestion.propTypes = {
+  navigation: PropTypes.object,
+  handleCreateCard: PropTypes.func,
+  id: PropTypes.string
+}
 export default connect(mapStateToProps, mapDispatchToProps)(AddQuestion);

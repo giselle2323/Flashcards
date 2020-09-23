@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import PropTypes from 'prop-types'
 import { primaryText } from "../utils/colors";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -36,4 +37,9 @@ const styles = StyleSheet.create({
   },
 });
 
+Appbar.propTypes = {
+  onBackPressed: PropTypes.func,
+  subtitle: PropTypes.string,
+  title: PropTypes.string
+}
 export default Appbar

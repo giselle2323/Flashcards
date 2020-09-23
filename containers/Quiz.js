@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
+
 import QuizWrapper from "./QuizWrapper";
 import {
   removeNotifications,
@@ -34,4 +36,9 @@ const mapStateToProps = ({ decks }, { route }) => {
   };
 };
 
+Quiz.propTypes = {
+  navigation: PropTypes.object,
+  id: PropTypes.string,
+  deck: PropTypes.object
+}
 export default connect(mapStateToProps)(Quiz);

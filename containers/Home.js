@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { globalStyle } from '../utils/global-styles'
@@ -50,7 +51,10 @@ const mapDispatchToProps = dispatch =>  {
   }
 }
 
-
-
+Home.propTypes = {
+  navigation: PropTypes.object,
+  decks: PropTypes.object,
+  fetchInitialData: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

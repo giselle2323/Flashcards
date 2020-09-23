@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import QuizContainer from "./QuizContainer";
 
 const QuizListItem = ({ questions, index, total })  => {
@@ -19,4 +20,9 @@ const QuizListItem = ({ questions, index, total })  => {
   )
 }
 
+QuizListItem.propTypes = {
+  questions: PropTypes.object,
+  index: PropTypes.number,
+  total: PropTypes.number
+}
 export default QuizListItem;

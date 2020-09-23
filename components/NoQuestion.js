@@ -11,7 +11,7 @@ import {
 import { globalStyle } from "../utils/global-styles";
 import Button from './Button'
 
-const NoQuestion = ({ navigation }) => {
+const NoQuestion = () => {
 
 
   return (
