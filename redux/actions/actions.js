@@ -1,6 +1,7 @@
 export const GET_DECKS = "GET_DECKS";
 export const CREATE_CARD = "CREATE_CARD";
 export const CREATE_DECK = "CREATE_DECK";
+export const REMOVE_DECK = 'REMOVE_DECK';
 
 import { addCardToDeck, createDeck } from "../../utils/api";
 
@@ -43,3 +44,10 @@ export const handleCreateDeck = (title) => {
     });
   };
 };
+
+export function removeDeck(id) {
+  return {
+    type: REMOVE_DECK,
+    id
+  };
+}

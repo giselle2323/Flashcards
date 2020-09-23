@@ -1,4 +1,4 @@
-import { GET_DECKS, CREATE_DECK, CREATE_CARD } from "./actions";
+import { GET_DECKS, CREATE_DECK, CREATE_CARD, REMOVE_DECK } from "./actions";
 import { loadingBarReducer } from "react-redux-loading-bar";
 import { combineReducers } from "redux";
 
@@ -31,7 +31,12 @@ const decksReducer = (initialState = {}, action) => {
           ],
         },
       };
-
+    case REMOVE_DECK:
+      const { id } = action;
+      const { [id]: value, ...decks } = initialState;
+      return {
+       decks
+      }
     default:
       return initialState;
   }
